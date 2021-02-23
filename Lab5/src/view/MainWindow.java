@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
+import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +33,6 @@ public class MainWindow extends JFrame{
 	private MenuItem menuAbout;
 	private MenuItem menuOpen;
 	private MenuItem menuClose;
-	private Icon icon = new ImageIcon("images/app.png");
 	private TrayIcon trayIcon;
 	private PopupMenu popup;
 	
@@ -64,8 +64,8 @@ public class MainWindow extends JFrame{
 		menuOpen = new MenuItem("Open");
 		menuClose = new MenuItem("Close");
 		popup = new PopupMenu("Popup");
-		trayIcon.setImage((Image) icon);  
-		//trayIcon.setPopupMenu(popup); 
+		trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().getImage("images/app.png"), "Application Name", popup);
+		trayIcon.setPopupMenu(popup); 
 		
 	}
 	
