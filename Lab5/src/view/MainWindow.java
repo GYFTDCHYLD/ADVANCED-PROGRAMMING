@@ -62,9 +62,8 @@ public class MainWindow extends JFrame{
 		menuOpen = new MenuItem("Open");
 		menuClose = new MenuItem("Close");
 		popup = new PopupMenu("Popup");
-		trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().getImage("images/app.png"), "Application Name", popup);
+		trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().getImage("images/app.png"));
 		trayIcon.setPopupMenu(popup); 
-		
 	}
 	
 	public void addMenuItemsToPopup() {
