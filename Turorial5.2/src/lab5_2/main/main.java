@@ -1,4 +1,4 @@
-package FlowLayoutExample.main;
+package lab5_2.main;
 
 import FlowLayoutExample.domain.FlowLayoutExample;
 

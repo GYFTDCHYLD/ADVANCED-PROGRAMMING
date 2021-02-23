@@ -66,6 +66,6 @@ public class FlowLayoutExample {
 		
 		frame.setSize(new Dimension(420,150));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setVisible(false);
+		frame.setVisible(true);
 	}
 }
