@@ -60,25 +60,7 @@ public class Form {
 		
 		button.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				try {
-					Student Student = new Student();
-					Student = Student.readFromFile(Integer.valueOf(idTextField.getText()));
-					nameTextField.setText(Student.getName());
-					emailTextField.setText(Student.getEmail());
-					dobTextField.setText(Student.getDOB().toString());
-				} catch (NumberFormatException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (ClassNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+				populateForm();
 			}
 		});
 		frame.setLayout(new FlowLayout(FlowLayout.LEADING));
@@ -112,6 +94,29 @@ public class Form {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
+	}
+	
+	
+	public void populateForm() {
+		try {
+			Student Student = new Student();
+			Student = Student.readFromFile(Integer.valueOf(idTextField.getText()));
+			nameTextField.setText(Student.getName());
+			emailTextField.setText(Student.getEmail());
+			dobTextField.setText(Student.getDOB().toString());
+		} catch (NumberFormatException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 	}
 	
 	
