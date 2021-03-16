@@ -14,9 +14,9 @@ public class Driver {
 	static ArrayList<Student> studentList = new  ArrayList();
 	public static void main(String[] arg) throws FileNotFoundException, IOException {
 		
-		studentList.add(new Student(1801864, "Jane Henry", "jane@yahoo.com",new Date(10,10,2000)));
-		studentList.add(new Student(1822327, "Rachell Green", "rachell@yahoo.com",new Date(20,03,2001)));
-		studentList.add(new Student(1800120, "Kerry Plasid", "plasid@yahoo.com",new Date(10,10,2003)));
+		studentList.add(new Student("1801864", "Jane Henry", "jane@yahoo.com",new Date(10,10,2000)));
+		studentList.add(new Student("1822327", "Rachell Green", "rachell@yahoo.com",new Date(20,03,2001)));
+		studentList.add(new Student("1800120", "Kerry Plasid", "plasid@yahoo.com",new Date(10,10,2003)));
 		
 		showMenu();
 	}

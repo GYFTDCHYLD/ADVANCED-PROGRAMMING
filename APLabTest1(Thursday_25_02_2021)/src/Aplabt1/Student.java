@@ -12,21 +12,21 @@ import java.util.ArrayList;
 
 
 public class Student implements Serializable{
-	private int Id;
+	private String Id;
 	private String Name;
 	private String Email;
 	private Date DOB;
 	
 	
 	public Student() {
-		Id = 0;
+		Id = "";
 		Name = "";
 		Email = "";
 		DOB = new Date();
 	}
 	
 	
-	public Student(int id, String name, String email, Date dOB) {
+	public Student(String id, String name, String email, Date dOB) {
 		Id = id;
 		Name = name;
 		Email = email;
@@ -34,12 +34,12 @@ public class Student implements Serializable{
 	}
 
 
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 
@@ -88,13 +88,13 @@ public class Student implements Serializable{
 		Output.close();
 	}
 	
-	public Student readFromFile(int Key)  throws ClassNotFoundException, IOException, FileNotFoundException{
+	public Student readFromFile(String string)  throws ClassNotFoundException, IOException, FileNotFoundException{
 		Student Student = new Student(); 
 		ObjectInputStream Input = new ObjectInputStream(new FileInputStream("QACStudents.ser"));
 		while(true) {
 			try {
 				Student = (Student) Input.readObject();
-				if(Student.getId() == Key) {
+				if(Student.getId() == string) { 
 					return Student;
 				}
 			}catch(EOFException e) {
@@ -103,21 +103,5 @@ public class Student implements Serializable{
 		}
 		return new Student();
 	}
-	
-	/* this method returns an array while the method above return a single object
-	public static ArrayList<Student> readFromFile()  throws ClassNotFoundException, IOException, FileNotFoundException{
-		ArrayList<Student> Students = new ArrayList();
-		Student Student = new Student();
-		ObjectInputStream Input = new ObjectInputStream(new FileInputStream("QACStudents.ser"));
-		while(true) {
-			try {
-				Students.add(Student = (Student) Input.readObject());
-			}catch(EOFException e) {
-				break; 
-			} 
-		}
-		return Students;
-	}
-	*/
 	
 }
