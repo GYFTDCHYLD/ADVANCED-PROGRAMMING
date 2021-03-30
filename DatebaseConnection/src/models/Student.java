@@ -1,4 +1,5 @@
 package models;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -27,17 +28,23 @@ public class Student {
 	}
 
 	public void readAll() {
-		String sql = ("SELECT * FROM `students`");
+		String sql = "SELECT * FROM dblab. `students`";
 		try {
 			stmt = connection.createStatement();
-			stmt.executeUpdate(sql);
+			//stmt.executeUpdate(sql);
+			ResultSet result = stmt.executeQuery(sql);
+			while(result.next()) {
+				System.out.println("ID: " + result.getString("id") + "  Name: " + result.getString("name"));
+			    //System.out.println("ID: " + result.getString(1) + "  Name: " + result.getString(2));
+			}
 		} catch (SQLException e) {
 			System.err.println("sql exception caught");
+			e.printStackTrace();
 		}
 	}
 
 	public void update(String id, String name) {
-		String sql = ("UPDATE `students` SET name ='" + name + "' WHERE id = '" + id + "');");
+		String sql = "UPDATE dblab.`students` SET `name` = '" + name + "' WHERE `id` = '" + id + "'";
 		try {
 			stmt = connection.createStatement();
 			stmt.executeUpdate(sql);
@@ -47,7 +54,7 @@ public class Student {
 	}
 
 	public void delete(String id) {
-		String sql = ("DELETE FROM `students`  WHERE id = '" + id + "');");
+		String sql = "DELETE FROM dblab. `students`  WHERE id = '" + id + "'";
 		try {
 			stmt = connection.createStatement();
 			stmt.executeUpdate(sql);

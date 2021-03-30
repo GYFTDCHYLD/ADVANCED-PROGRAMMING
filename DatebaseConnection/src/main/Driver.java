@@ -6,20 +6,20 @@ public class Driver {
 
 	@SuppressWarnings("null")
 	public static void main(String[] args) {
-		Student student = null;
+		Student student = new Student();
 		String id;
 		String name;
 		Scanner input = new Scanner(System.in);
 		System.out.print("\n Enter ID: ");
 		id = input.next();
 		System.out.print("\n Enter Name: ");
-		name = input.next();
+		name = input.next(); 
 		student.create(id, name);
 		student.readAll();
-		student.update(id, "Shericka");
+		student.update("11", "Sher");
 		student.readAll();
-		student.delete(id);
-		student.readAll();
+		student.delete("11");
+		student.readAll(); 
 	}
 
 }
