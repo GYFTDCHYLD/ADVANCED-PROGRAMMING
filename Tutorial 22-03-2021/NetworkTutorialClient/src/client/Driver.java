@@ -4,7 +4,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		Client client = new Client();
-		Student student = new Student("1001", "John", "Public", "publicj@anemail.com");
+		Student student = new Student("1002", "John", "Public", "publicj@anemail.com");
 		
 		client.sendAction("Add Student");
 		System.out.println("Message sent to server");
