@@ -31,9 +31,6 @@ public class Controller {
     void startServer(ActionEvent event) {
     	server_status.setStyle("-fx-background-color: green; -fx-background-radius: 90;");
     	server_btn.setDisable(true);
-    
     	database_status.setStyle("-fx-background-color: green; -fx-background-radius: 90;");
-    	
-    	
     }
 }
